@@ -1,1 +1,6 @@
-
+---
+applications:
+- name: spring-boot-jenkins
+  memory: 512M
+  host: springboot-jenkins
+  path: target/demo-0.1.0.jar
