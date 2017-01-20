@@ -3,4 +3,5 @@ applications:
 - name: spring-boot-jenkins
   memory: 512M
   host: springboot-jenkins
+  domain: cfapps.io
   path: target/demo-0.0.1.jar
