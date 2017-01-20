@@ -1,25 +1,25 @@
-package com.model;
+package com.example.model;
 
+import org.springframework.data.annotation.Id;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+@JsonIgnoreProperties(ignoreUnknown =true)
 public class Customer {
-
-	private Long id;
+    
+	@Id
+	private String id;
 	private String name;
 	
 	public Customer() {
 		
 	}
-	
-	public Customer(long id, String name) {
-		super();
-		this.id = id;
-		this.name = name;
-	}
-	
-	public Long getId() {
+
+	public String getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 
@@ -35,10 +35,11 @@ public class Customer {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + (int) (id ^ (id >>> 32));
+		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		result = prime * result + ((name == null) ? 0 : name.hashCode());
 		return result;
 	}
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -48,7 +49,10 @@ public class Customer {
 		if (getClass() != obj.getClass())
 			return false;
 		Customer other = (Customer) obj;
-		if (id != other.id)
+		if (id == null) {
+			if (other.id != null)
+				return false;
+		} else if (!id.equals(other.id))
 			return false;
 		if (name == null) {
 			if (other.name != null)
@@ -57,9 +61,12 @@ public class Customer {
 			return false;
 		return true;
 	}
+
 	@Override
 	public String toString() {
 		return "Customer [id=" + id + ", name=" + name + "]";
 	}
+	
+	
 	
 }
