@@ -4,33 +4,66 @@ import org.springframework.data.annotation.Id;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class Customer.
+ */
 @JsonIgnoreProperties(ignoreUnknown =true)
 public class Customer {
     
+	/** The id. */
 	@Id
 	private String id;
+	
+	/** The name. */
 	private String name;
 	
+	/**
+	 * Instantiates a new customer.
+	 */
 	public Customer() {
 		
 	}
 
+	/**
+	 * Gets the id.
+	 *
+	 * @return the id
+	 */
 	public String getId() {
 		return id;
 	}
 
+	/**
+	 * Sets the id.
+	 *
+	 * @param id the new id
+	 */
 	public void setId(String id) {
 		this.id = id;
 	}
 
+	/**
+	 * Gets the name.
+	 *
+	 * @return the name
+	 */
 	public String getName() {
 		return name;
 	}
 
+	/**
+	 * Sets the name.
+	 *
+	 * @param name the new name
+	 */
 	public void setName(String name) {
 		this.name = name;
 	}
 
+	/* (non-Javadoc)
+	 * @see java.lang.Object#hashCode()
+	 */
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -40,6 +73,9 @@ public class Customer {
 		return result;
 	}
 
+	/* (non-Javadoc)
+	 * @see java.lang.Object#equals(java.lang.Object)
+	 */
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -62,6 +98,9 @@ public class Customer {
 		return true;
 	}
 
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
 	@Override
 	public String toString() {
 		return "Customer [id=" + id + ", name=" + name + "]";
