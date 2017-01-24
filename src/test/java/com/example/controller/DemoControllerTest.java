@@ -194,7 +194,7 @@ public class DemoControllerTest {
 
 		// Get the blog
 		restCustomerMockMvc.perform(delete("/api/customer/{id}", customer.getId()).accept(MediaType.APPLICATION_JSON_UTF8))
-				.andExpect(status().isOk()).andDo(print());
+				.andExpect(status().isOk());//.andDo(print());
 
 		// Validate the database is empty
 		List<Customer> customers = repository.findAll();
