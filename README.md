@@ -48,6 +48,6 @@ Spring Boot Example with Jenkins,Sonarqube,Cloud Foundary and Code Coverage Anal
             </properties>
        </profile>
      </profiles>
-  
-
+     
+     to run analysis - `mvn sonar:sonar` in project home
 ```
