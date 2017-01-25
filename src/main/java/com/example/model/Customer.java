@@ -1,10 +1,13 @@
+/*
+ * 
+ */
 package com.example.model;
 
 import org.springframework.data.annotation.Id;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-// TODO: Auto-generated Javadoc
+
 /**
  * The Class Customer.
  */
@@ -22,7 +25,7 @@ public class Customer {
 	 * Instantiates a new customer.
 	 */
 	public Customer() {
-		
+		// constructor for public use
 	}
 
 	/**

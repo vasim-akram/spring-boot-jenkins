@@ -5,11 +5,8 @@ package com.example.controller;
 
 import java.net.URI;
 import java.net.URISyntaxException;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-
-import javax.inject.Inject;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -26,7 +23,6 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.model.Customer;
 import com.example.repository.CustomerRepository;
 
-// TODO: Auto-generated Javadoc
 /**
  * The Class DemoController.
  */
@@ -34,16 +30,16 @@ import com.example.repository.CustomerRepository;
 @RequestMapping("/api")
 public class DemoController {
 
+	/** The repository. */
+	@Autowired
+	private CustomerRepository repository;
+
 	/**
 	 * Instantiates a new demo controller.
 	 */
 	public DemoController() {
-		// TODO Auto-generated constructor stub
+		// TODO 
 	}
-
-	/** The repository. */
-	@Autowired
-	private CustomerRepository repository;
 
 	/**
 	 * Gets the all customers.
@@ -51,10 +47,8 @@ public class DemoController {
 	 * @return the all customers
 	 */
 	@GetMapping("/customers")
-	public ResponseEntity<List<Customer>> getAllCustomers() {
-		List<Customer> custList = new ArrayList<>();
-		custList = repository.findAll();
-		return new ResponseEntity<List<Customer>>(custList, HttpStatus.OK);
+	public List<Customer> getAllCustomers() {
+		return repository.findAll();
 	}
 
 	/**
@@ -111,7 +105,7 @@ public class DemoController {
 	@DeleteMapping("/customer/{custId}")
 	public ResponseEntity<Void> deleteCustomer(@PathVariable final String custId) {
 		repository.delete(custId);
-		return new ResponseEntity<Void>(HttpStatus.OK);
+		return new ResponseEntity<>(HttpStatus.OK);
 	}
 
 }
