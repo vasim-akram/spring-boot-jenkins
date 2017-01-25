@@ -49,5 +49,10 @@ Spring Boot Example with Jenkins,Sonarqube,Cloud Foundary and Code Coverage Anal
        </profile>
      </profiles>
      
-     to run analysis - `mvn sonar:sonar` in project home
-```
+     to run analysis - `mvn sonar:sonar` in project home```
+     
+### jacoco(java code coverage) config in maven -
+
+* for jacoco configuration follow [Jacoco in maven](http://dev.macero.es/2016/02/06/test-coverage-analysis-for-your-spring-boot-app/) 
+  
+
